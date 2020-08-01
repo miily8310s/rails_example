@@ -17,9 +17,12 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'capybara/rspec'
+require 'selenium-webdriver'
 
 RSpec.configure do |config|
   config.before(:each, type: :system) do
+    # Selenium::WebDriver::Chrome.driver_path = '/mnt/c/Program Files/chromedriver_win32/chromedriver.exe'
+    Selenium::WebDriver::Chrome.driver_path = '/mnt/c/Windows/chromedriver.exe'
     driven_by :selenium_chrome_headless
   end
   # rspec-expectations config goes here. You can use an alternate
